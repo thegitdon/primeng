@@ -8,6 +8,10 @@ import { AngularComponent } from './component/angular/angular.component';
 import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenubarModule } from 'primeng/menubar';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -23,7 +27,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     TableModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MenubarModule,
+    DialogModule,
+    InputTextModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

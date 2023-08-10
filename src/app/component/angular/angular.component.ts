@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Angular } from 'src/app/model/angular';
 import { AngularService } from 'src/app/service/angular.service';
+import { MenuItem } from 'primeng/api';
+
 
 @Component({
   selector: 'app-angular',
@@ -10,6 +12,16 @@ import { AngularService } from 'src/app/service/angular.service';
 export class AngularComponent implements OnInit {
 
   tutorials?: Angular[];
+  //Dynamic Columns
+  cols: any[];
+  items: MenuItem[];
+  //
+  display: boolean = false;
+  //
+  tutorial: Angular = {
+    title: '',
+    published: false
+  };
   age: number;
   names: Array<string>;
 
@@ -20,6 +32,24 @@ export class AngularComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveTutorials();
+
+    this.cols = [
+      { field: 'id', header: 'Vin' },
+      { field: 'title', header: 'Year' },
+      { field: 'published', header: 'Brand' }
+    ];
+
+    this.items = [
+      {
+        label: 'New',
+        icon: 'pi pi-fw pi-plus',
+        command: () => this.showDialog()
+      },
+      {
+        label: 'Edit',
+        icon: 'pi pi-fw pi-pencil'
+      }
+    ];
   }
 
   retrieveTutorials(): void {
@@ -31,6 +61,14 @@ export class AngularComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+  }
+
+  showDialog() {
+    this.display = true;
+  }
+
+  save() {
+    console.log("data");
   }
 
   aumentarEdad() {

@@ -1,5 +1,5 @@
 export class Angular {
     id?: any;
-    description?: string;
+    title?: string;
     published?: boolean;
 }
